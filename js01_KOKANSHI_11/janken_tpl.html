@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+        <ul>
+            <li id="gu_btn">グー</li>
+            <li id="cho_btn">チョキ</li>
+            <li id="par_btn">パー</li>
+        </ul>
+        <div class="hand">コンピュータの出した手は？「<span id="pc_hands">何</span>」</div>
+        <div id="judgment"class="judg" >勝ち負け</div>
+    </main>
+
+    <footer></footer>
+    <script>
+        var gu = document.getElementById('gu_btn');
+        var cho = document.getElementById('cho_btn');
+        var par = document.getElementById('par_btn');
+        var pc_hand = document.getElementById('pc_hands');
+        var judg = document.getElementById('judgment');
+
+            gu.addEventListener('click', () => {
+            const num = Math.floor(Math.random()*3);
+            if(num == 0){
+                pc_hand.innerText="グー";
+                judg.innerText="引き分け";
+                judg.style.color="blue";
+            }
+            else if(num == 1){
+                pc_hand.innerText="チョキ";
+                judg.innerText="あなたの勝ち";
+                judg.style.color="red";
+            }
+            else if(num == 2){
+                pc_hand.innerText="パー";
+                judg.innerText="あなたの負け";
+                judg.style.color="gray";
+            };
+            });
+
+            cho.addEventListener('click', () => {
+            const num = Math.floor(Math.random()*3);
+            if(num == 0){
+                pc_hand.innerText="グー";
+                judg.innerText="あなたの負け";
+                judg.style.color="gray";
+            }
+            else if(num == 1){
+                pc_hand.innerText="チョキ";
+                judg.innerText="引き分け";
+                judg.style.color="blue";
+            }
+            else if(num == 2){
+                pc_hand.innerText="パー";
+                judg.innerText="あなたの勝ち";
+                judg.style.color="red";
+            };
+            });
+
+            par.addEventListener('click', () => {
+            const num = Math.floor(Math.random()*3);
+            if(num == 0){
+                pc_hand.innerText="グー";
+                judg.innerText="あなたの勝ち";
+                judg.style.color="red";
+            }
+            else if(num == 1){
+                pc_hand.innerText="チョキ";
+                judg.innerText="あなたの負け";
+                judg.style.color="gray";
+            }
+            else if(num == 2){
+                pc_hand.innerText="パー";
+                judg.innerText="引き分け";
+                judg.style.color="blue";
+            };
+        });
+       
+
+    </script>
+</body>
+
+</html>

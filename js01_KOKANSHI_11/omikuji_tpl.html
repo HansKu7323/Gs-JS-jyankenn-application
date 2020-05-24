@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>おみくじ</title>
+</head>
+<body>
+
+<header>
+    <h1>おみくじ</h1>
+</header>
+
+<main>
+    <ul>
+        <li id="hoshi" class="omikuji">おみくじを引く</li>
+    </ul>
+    <p id="echo"></p>
+</main>
+
+<footer>フッター</footer>
+<script>
+ document.getElementById('hoshi').addEventListener('click', function(){
+ const num = Math.floor(Math.random()*5);
+ let view = ""
+ if(num == 0){
+    view = '<img src="img/daikichi.jpeg" width = "300">' ;
+ }
+ else if(num == 1){
+    view = '<img src="img/cyuukichi.jpeg" width = "300">';
+ }
+ else if(num == 2){
+    view = '小吉';
+ }
+ else if(num == 3){
+    view = '吉';
+ }
+ else if(num == 4){
+    view = '凶';
+ };
+document.getElementById('echo').innerHTML = view;
+// $("#echo").html(view);
+});
+
+
+</script>
+</body>
+</html>
